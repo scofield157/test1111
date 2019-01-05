@@ -1,0 +1,11 @@
+%for host in hostList:
+<tr>
+    <td>
+        <input type="checkbox" name='hostID' value="${host.get('bk_host_id')}" ip="${host.get('ip')}" osType="${host.get('osType')}" cloudID="${host.get('cloudID')}">
+    </td>
+    <td>${host.get('hostName')}</td>
+    <td>${host.get('ip')}</td>
+    <td>${host.get('osType')}</td>
+    <td>${host.get('cloudID')}</td>
+</tr>
+%endfor

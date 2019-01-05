@@ -14,6 +14,8 @@ from django.conf.urls import patterns
 urlpatterns = patterns(
     'home_application.views',
     (r'^$', 'home'),
-    (r'^dev-guide/$', 'dev_guide'),
-    (r'^contactus/$', 'contactus'),
+    (r'^searchHost/$', 'get_host_by_biz'),
+    (r'^createTask/$', 'change_host_password'),
+    (r'^index/$', 'home'),
+    (r'^getLogs/$', 'get_all_log'),
 )

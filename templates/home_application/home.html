@@ -1,25 +1,206 @@
-<%inherit file="/base.html"/>
+<!DOCTYPE html>
+<html>
 
-<%block name="content">
-    <div class="home-page">
-    	<div class="page-arrow">
-			<div class="container">
-				<!-- 蓝鲸智云开发框架说明  Start -->
-				<div class="tc title-word">
-					<p>欢迎使用蓝鲸智云集成平台</p>
-				</div>
-				<div class="tc title-word-second">
-					<p>蓝鲸智云开发框架<small class="pl10">助力你的自动化</small></p>
-				</div>
-				<hr class="cutting-line">
-				<div class="tc frame-explain-text">
-					<p>您现在打开的应用是由蓝鲸智云示例代码生成的，该示例代码称为“APP开发框架”。</p>
-					<p>蓝鲸智云集成平台（PaaS）提供了完善的前后台开发框架、调度引擎、公共组件等模块，帮助业务的产品和技术人员快速构建低成本、免运维的支撑工具和运营系统。</p>
-					<p>若想体验快速开发应用的功能，请前往<a class="developer-center" href="${BK_PAAS_HOST}" target="_blank">“开发者中心”</a>。</p>
-				</div>
-				<!-- 蓝鲸智云开发框架说明  End -->
-			</div>
-		</div>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- 若您需要使用Kendo UI Professional，请联系版权人获得合法的授权或许可。 -->
+    <!-- Bootstrap css -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <!-- kendo ui css -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <!-- font-awesome -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <!--蓝鲸提供的公用样式库 -->
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk_pack.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <link href="https://magicbox.bk.tencent.com/static_api/v3/assets/artDialog-6.0.4/css/ui-dialog.css" rel="stylesheet">
+    <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+    <link rel="stylesheet" href="https://magicbox.bk.tencent.com/static_api/v3/assets/jstree-3.1.1/dist/themes/default/style.min.css" />
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <!-- 包括所有kendoui的js插件或者可以根据需要使用的js插件调用　-->
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/echarts-2.0/echarts-all.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/bk/js/bk.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/artDialog-6.0.4/dist/dialog-min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="https://magicbox.bk.tencent.com/static_api/v3/assets/jstree-3.1.1/dist/jstree.min.js"></script>
+    <!-- 数据埋点统计 -->
+    <script src="http://magicbox.bk.tencent.com/static_api/analysis.js"></script>
+    <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+    <!--[if lt IE 9]><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/html5shiv.min.js"></script><script src="https://magicbox.bk.tencent.com/static_api/v3/assets/js/respond.min.js"></script><![endif]-->
+</head>
+
+<body class="bg-white" data-bg-color="bg-white">
+    <div class="king-page-box">
+        <div class="king-layout1-header">
+            <nav role="navigation" class="navbar navbar-default king-horizontal-nav2    f14 ">
+                <div class="container " style="width:100%;overflow:hidden;">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed navbar-toggle-sm" data-toggle="collapse" data-target="#king-horizontal-nav2-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="javascript:;">
+                            <img src="https://magicbox.bk.tencent.com/static_api/v3/bk/images/logo3.png" alt="" class="logo"> </a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-responsive-collapse" id="king-horizontal-nav2-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="king-navbar-active"><a href="index/">密码修改</a></li>
+                            <li><a href="getLogs/">操作记录</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="javascript:;">
+                                    <span>request.username</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="king-layout2-main mt15" style="width:960px;">
+            <form class="form-horizontal">
+                <div class="form-group clearfix ">
+                    <label class="control-label col-sm-3 bk-lh30 pt0">系统类型：</label>
+                    <div class="col-sm-9">
+                        <div class="radio pt0">
+                            <label class="mr10">
+                                <input type="radio" name="osType" id="" class="bk-top5" value="2">
+                                <span class="bk-lh30">Windows</span>
+                            </label>
+                            <label class="mr10">
+                                <input type="radio" name="osType" id="" class="bk-top5" value="1">
+                                <span class="bk-lh30">Linux</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group clearfix ">
+                    <label class="col-sm-3 control-label bk-lh30 pt0">选择业务：</label>
+                    <div class="col-sm-9">
+                        <select name="" id="biz_select" class="form-control bk-valign-top" onchange='search_host()'>
+                            %for biz in bizList:
+                                <option value="${biz.get('app_id')}">${biz.get('app_name')}</option>
+                            %endfor
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group clearfix ">
+                    <label class="col-sm-3 control-label bk-lh30 pt0">密码输入：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control bk-valign-top" id="password" placeholder="提示信息">
+                    </div>
+                </div>
+                <div class="form-group clearfix ">
+                    <label class="col-sm-3 control-label bk-lh30 pt0">密码确认：</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control bk-valign-top" id="checkPassword" placeholder="提示信息">
+                    </div>
+                </div>
+                <div class="form-group clearfix ">
+                    <label class="col-sm-6 control-label bk-lh30 pt0"></label>
+                    <div class="col-sm-6">
+                        <button class="king-btn-demo king-btn king-success" title="保存" onclick="create_task()">保存</button>
+                    </div>
+                </div>  
+                <div class="panel-content">
+                    <table class="table table-header-bg table-hover mb0" id="table_demo2">
+                        <thead>
+                        <tr>
+                            <th style="width: 25px">
+                                <input type="checkbox" name="checkall" value="">
+                            </th>
+                            <th style="width: 100px">主机名</th>
+                            <th style="width:25%">内网IP</th>
+                            <th style="width:25%">操作系统</th>
+                            <th style="width:25%">云区域ID</th>
+                        </tr>
+                        </thead>
+                        <tbody id='hostTable'>
+    
+                        </tbody>
+                    </table>
+                </div>               
+            </form>
+        </div>
     </div>
-</%block>
+</body>
 
+</html>
+<script type="text/javascript">
+    function search_host(){
+        var osType = $("input:radio[name='osType']:checked").val()
+        var biz_id = $('#biz_select').val()
+        if(osType!="1"&&osType!="2"){
+            alert('请选择一个操作系统')
+            return
+        }
+        $.get('searchHost/',{'osType':osType,'bizID':biz_id},function(result){
+            $('#hostTable').html(result)
+        })
+    }
+    function create_task(){
+            var hosts = []
+            var select_hosts = $('#hostTable').find('input:checked')
+            if (select_hosts.length == 0){
+                alert('请至少选择一台机器')
+                return
+            }
+            password = $('#password').val()
+            checkPassword = $('#checkPassword').val()
+            if (password=='' || password==undefined){
+                alert('清输入密码')
+                return
+            }
+            if (checkPassword=='' || checkPassword==undefined){
+                alert('清确认密码')
+                return
+            }
+            if (password!=checkPassword){
+                alert('两次输入密码不一致')
+                return
+            }
+            var osType = $("input:radio[name='osType']:checked").val()
+            $(select_hosts).each(function(){
+                host = {
+                    'ip':$(this).attr('ip'),
+                    'bk_cloud_id':$(this).attr('cloudID')
+                }
+                hosts.push(host)
+            })
+            param = {
+                'bizID':$('#biz_select').val(),
+                'password':password,
+                'osType':osType,
+                'hosts':hosts
+            }
+            $.ajax({
+                url: "createTask/",
+                dataType: "json",
+                type: "post",
+                data: JSON.stringify(param),
+                headers: {
+                    "Content-Type": "application/json;charset=utf-8"
+                },
+                success: function (result) {
+                        alert(result.message)
+                }
+            })
+        }
+    //带按钮弹窗
+    $(function(){
+
+    })
+</script>

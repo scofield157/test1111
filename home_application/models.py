@@ -9,4 +9,15 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 See the License for the specific language governing permissions and limitations under the License.
 """
 
-# from django.db import models
+from django.db import models
+
+
+class OptLog(models.Model):
+    """操作记录信息"""
+    operator = models.CharField(u'操作用户', max_length=128)
+    opt_at = models.CharField(u'操作时间', max_length=100)
+    opt_log = models.CharField(u'日志信息', max_length=1000)
+
+    class Meta:
+        verbose_name = '操作记录信息'
+        verbose_name_plural = '操作记录信息'
